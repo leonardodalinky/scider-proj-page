@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SciDER: Scientific Data-centric End-to-end Researcher • ACL Demo 2026</title>
+  <meta name="description" content="SciDER: Scientific Data-centric End-to-end Researcher. A data-centric end-to-end system for autonomous scientific discovery. ACL Demo 2026 submission." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --bg-2: #0f1720;
+      --ink: #e7edf5;
+      --muted: #b8c2d3;
+      --accent: #35c3ff;
+      --accent-2: #7df7a6;
+      --card: rgba(15, 23, 32, 0.72);
+      --border: rgba(231, 237, 245, 0.12);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(53, 195, 255, 0.12), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(125, 247, 166, 0.12), transparent 55%),
+        linear-gradient(160deg, #08090d 0%, #0b0c10 35%, #0f1720 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 28px 80px;
+      position: relative;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .brand {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 48px;
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .hero-card {
+      padding: 36px;
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: -40% 40% auto -40%;
+      height: 220px;
+      background: linear-gradient(120deg, rgba(53, 195, 255, 0.25), transparent 60%);
+      filter: blur(0px);
+      transform: rotate(-6deg);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 12px;
+      color: var(--accent-2);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.08;
+    }
+
+    .subtitle {
+      font-family: "IBM Plex Serif", serif;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0 0 18px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .badge {
+      padding: 6px 12px;
+      background: rgba(53, 195, 255, 0.12);
+      border: 1px solid rgba(53, 195, 255, 0.25);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .hero-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .link-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      margin-top: 20px;
+    }
+
+    .link-card {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s ease, border 0.2s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(125, 247, 166, 0.45);
+    }
+
+    .link-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: rgba(125, 247, 166, 0.16);
+      color: var(--accent-2);
+      font-size: 16px;
+    }
+
+    .panel {
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .abstract {
+      font-family: "IBM Plex Serif", serif;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 24px;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .list strong { color: var(--ink); }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .demo {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: stretch;
+    }
+
+    .mock {
+      border-radius: var(--radius);
+      background: linear-gradient(140deg, rgba(53, 195, 255, 0.12), rgba(125, 247, 166, 0.08));
+      border: 1px solid var(--border);
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+      min-height: 220px;
+    }
+
+    .mock screen {
+      display: block;
+      border-radius: 14px;
+      background: rgba(8, 12, 16, 0.8);
+      border: 1px solid rgba(231, 237, 245, 0.08);
+      padding: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      font-family: "IBM Plex Serif", serif;
+    }
+
+    .footer {
+      margin-top: 56px;
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .demo {
+        grid-template-columns: 1fr;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        transition: none;
+      }
+      .link-card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="brand">SciDER</div>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#system">System</a>
+        <a href="#demo">Demo</a>
+        <a href="#resources">Resources</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-card reveal">
+        <div class="eyebrow">ACL Demo 2026 Submission</div>
+        <h1>SciDER: Scientific Data-centric End-to-end Researcher</h1>
+        <p class="subtitle">
+          An end-to-end agentic system that parses raw experimental data, designs hypotheses, and drives
+          self-evolving scientific workflows across domains.
+        </p>
+        <div class="meta">
+          <span class="badge">Demo Track</span>
+          <span>William &amp; Mary · University of Minnesota</span>
+          <span>Core Contributors: Ke Lin, Yilin Lu</span>
+        </div>
+        <div class="link-grid">
+          <a class="link-card" href="https://harryluumn.github.io/scievo-project-page/" target="_blank" rel="noreferrer">
+            <span class="link-icon">🌐</span>
+            <span>Project Page</span>
+          </a>
+          <a class="link-card" href="https://huggingface.co/spaces/AI4Research/scievo" target="_blank" rel="noreferrer">
+            <span class="link-icon">▶</span>
+            <span>Live Demo</span>
+          </a>
+          <a class="link-card" href="TODO" target="_blank" rel="noreferrer">
+            <span class="link-icon">🎥</span>
+            <span>Video (TBD)</span>
+          </a>
+          <a class="link-card" href="https://github.com/leonardodalinky/SciEvo" target="_blank" rel="noreferrer">
+            <span class="link-icon">⌁</span>
+            <span>Code</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-actions reveal">
+        <div class="panel">
+          <h2>Authors</h2>
+          <div class="list">
+            <div><strong>Ke Lin</strong><span> · William &amp; Mary</span><span> · Core contributor</span></div>
+            <div><strong>Yilin Lu</strong><span> · University of Minnesota</span><span> · Core contributor</span></div>
+            <div><strong>Third T. Author</strong><span> · William &amp; Mary</span></div>
+            <div><strong>Fourth Author</strong><span> · William &amp; Mary</span></div>
+            <div><strong>Qingyun Wang</strong><span> · William &amp; Mary</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>Contact</h2>
+          <div class="list">
+            <div><strong>klin07@wm.edu</strong></div>
+            <div><strong>qwang16@wm.edu</strong></div>
+            <div><strong>lu000661@umn.edu</strong></div>
+            <div><strong>Additional emails: TODO</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="abstract" class="section reveal">
+      <div class="panel">
+        <h2>Abstract</h2>
+        <p class="abstract">
+          Automated scientific discovery with large language models is transforming research, yet existing agents
+          struggle to autonomously interpret raw experimental data. We introduce <strong>SciDER</strong>, a data-centric
+          end-to-end system that automates the research lifecycle from ideation to experimentation.
+          Unlike traditional frameworks, the system implements a data-centric workflow by directly parsing and
+          analyzing raw experimental data across diverse domains. This grounding enables hypothesis generation and
+          experimental design tailored to specific data characteristics. SciDER excels in specialized scientific
+          discovery, outperforming general-purpose agents and state-of-the-art models through a self-evolving memory
+          and critic-led feedback loop. Distributed as a modular Python package, SciDER also offers easy-to-use PyPI
+          packages with a lightweight web interface to accelerate autonomous, data-driven research for the broader
+          community.
+        </p>
+      </div>
+    </section>
+
+    <section id="system" class="section reveal">
+      <div class="grid">
+        <div class="panel">
+          <h2>System Highlights</h2>
+          <div class="list">
+            <div><strong>Data-first pipeline.</strong> Parses raw experimental artifacts and meta-data directly.</div>
+            <div><strong>Self-evolving memory.</strong> Curates discoveries into reusable scientific context.</div>
+            <div><strong>Critic-led feedback.</strong> Iteratively validates hypotheses before execution.</div>
+            <div><strong>Domain versatility.</strong> Built to generalize across scientific disciplines.</div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>Release Snapshot</h2>
+          <div class="list">
+            <div><strong>Open-source codebase</strong> on GitHub with modular components.</div>
+            <div><strong>PyPI packages</strong> for fast installation and reproducible research.</div>
+            <div><strong>Web interface</strong> for interactive experimentation and demos.</div>
+            <div><strong>Deployment-ready</strong> architecture for labs and applied teams.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section reveal">
+      <div class="demo">
+        <div class="mock">
+          <h2>Demo Walkthrough</h2>
+          <screen>
+            1. Upload raw experimental data or connect lab storage.
+            2. SciDER parses observations, protocols, and metadata.
+            3. Hypothesis generator proposes next-step experiments.
+            4. Critic validates feasibility and novelty.
+            5. Memory engine distills outcomes for future cycles.
+          </screen>
+        </div>
+        <div class="panel">
+          <h2>Demo Links</h2>
+          <div class="list">
+            <div><strong>Live demo:</strong> huggingface.co/spaces/AI4Research/scievo</div>
+            <div><strong>Video:</strong> TODO</div>
+            <div><strong>Project page:</strong> harryluumn.github.io/scievo-project-page</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources" class="section reveal">
+      <div class="panel">
+        <h2>Resources</h2>
+        <div class="grid">
+          <div class="panel" style="background: rgba(53, 195, 255, 0.08); border-color: rgba(53, 195, 255, 0.3);">
+            <h2>Paper (ACL Demo 2026)</h2>
+            <p class="abstract" style="margin-bottom: 0;">
+              The submission highlights the data-centric workflow, evaluation across domains, and a lightweight
+              tooling stack for research labs.
+            </p>
+          </div>
+          <div class="panel" style="background: rgba(125, 247, 166, 0.08); border-color: rgba(125, 247, 166, 0.3);">
+            <h2>Open Questions</h2>
+            <p class="abstract" style="margin-bottom: 0;">
+              We are actively exploring broader domain coverage, interactive experiment planning, and long-horizon
+              memory evaluation. Collaborators are welcome.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 SciDER</span>
+      <span>ACL Demo 2026 · Data-centric autonomous discovery</span>
+    </footer>
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
