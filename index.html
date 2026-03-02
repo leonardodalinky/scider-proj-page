@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SciDER: Scientific Data-centric End-to-end Researcher • ACL Demo 2026</title>
-  <meta name="description" content="SciDER: Scientific Data-centric End-to-end Researcher. A data-centric end-to-end system for autonomous scientific discovery. ACL Demo 2026 submission." />
+  <title>SciDER: Scientific Data-centric End-to-end Researcher</title>
+  <meta name="description" content="SciDER: Scientific Data-centric End-to-end Researcher. A data-centric end-to-end system for autonomous scientific discovery." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -112,6 +112,17 @@
       font-size: 18px;
       line-height: 1.5;
       margin: 0 0 18px;
+    }
+
+    .logo-wrap {
+      margin-bottom: 16px;
+    }
+
+    .logo {
+      max-width: 180px;
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .meta {
@@ -230,16 +241,33 @@
       min-height: 220px;
     }
 
-    .mock screen {
+    .mock-screen {
       display: block;
       border-radius: 14px;
       background: rgba(8, 12, 16, 0.8);
       border: 1px solid rgba(231, 237, 245, 0.08);
       padding: 16px;
+    }
+
+    .walkthrough-list {
+      margin: 0;
+      padding-left: 20px;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.5;
       font-family: "IBM Plex Serif", serif;
+    }
+
+    .walkthrough-list li + li {
+      margin-top: 8px;
+    }
+
+    .figure-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(231, 237, 245, 0.12);
+      background: rgba(8, 12, 16, 0.7);
     }
 
     .footer {
@@ -303,31 +331,32 @@
 
     <section class="hero">
       <div class="hero-card reveal">
-        <div class="eyebrow">ACL Demo 2026 Submission</div>
+        <div class="logo-wrap">
+          <img class="logo" src="scider_logo.webp" alt="SciDER logo" />
+        </div>
         <h1>SciDER: Scientific Data-centric End-to-end Researcher</h1>
         <p class="subtitle">
           An end-to-end agentic system that parses raw experimental data, designs hypotheses, and drives
           self-evolving scientific workflows across domains.
         </p>
         <div class="meta">
-          <span class="badge">Demo Track</span>
-          <span>William &amp; Mary · University of Minnesota</span>
-          <span>Core Contributors: Ke Lin, Yilin Lu</span>
+          <span>William &amp; Mary · University of Minnesota · University of North Carolina at Chapel Hill</span>
+          <span>Ke Lin · Yilin Lu · Shreyas Bhat · Xuehang Guo · Junier Oliva · Qingyun Wang</span>
         </div>
         <div class="link-grid">
-          <a class="link-card" href="https://harryluumn.github.io/scievo-project-page/" target="_blank" rel="noreferrer">
+          <a class="link-card" href="https://harryluumn.github.io/scider-proj-page/" target="_blank" rel="noreferrer">
             <span class="link-icon">🌐</span>
             <span>Project Page</span>
           </a>
-          <a class="link-card" href="https://huggingface.co/spaces/AI4Research/scievo" target="_blank" rel="noreferrer">
+          <a class="link-card" href="https://huggingface.co/spaces/AI4Research/scider" target="_blank" rel="noreferrer">
             <span class="link-icon">▶</span>
             <span>Live Demo</span>
           </a>
-          <a class="link-card" href="TODO" target="_blank" rel="noreferrer">
+          <a class="link-card" href="https://youtu.be/2SQluhKP6RM" target="_blank" rel="noreferrer">
             <span class="link-icon">🎥</span>
-            <span>Video (TBD)</span>
+            <span>Video</span>
           </a>
-          <a class="link-card" href="https://github.com/leonardodalinky/SciEvo" target="_blank" rel="noreferrer">
+          <a class="link-card" href="https://github.com/leonardodalinky/SciDER" target="_blank" rel="noreferrer">
             <span class="link-icon">⌁</span>
             <span>Code</span>
           </a>
@@ -338,20 +367,20 @@
         <div class="panel">
           <h2>Authors</h2>
           <div class="list">
-            <div><strong>Ke Lin</strong><span> · William &amp; Mary</span><span> · Core contributor</span></div>
-            <div><strong>Yilin Lu</strong><span> · University of Minnesota</span><span> · Core contributor</span></div>
-            <div><strong>Third T. Author</strong><span> · William &amp; Mary</span></div>
-            <div><strong>Fourth Author</strong><span> · William &amp; Mary</span></div>
+            <div><strong>Ke Lin</strong><span> · William &amp; Mary</span></div>
+            <div><strong>Yilin Lu</strong><span> · University of Minnesota</span></div>
+            <div><strong>Shreyas Bhat</strong><span> · University of North Carolina at Chapel Hill</span></div>
+            <div><strong>Xuehang Guo</strong><span> · William &amp; Mary</span></div>
+            <div><strong>Junier Oliva</strong><span> · University of North Carolina at Chapel Hill</span></div>
             <div><strong>Qingyun Wang</strong><span> · William &amp; Mary</span></div>
           </div>
         </div>
         <div class="panel">
           <h2>Contact</h2>
           <div class="list">
-            <div><strong>klin07@wm.edu</strong></div>
-            <div><strong>qwang16@wm.edu</strong></div>
+            <div><strong>{klin07, xguo15, qwang16}@wm.edu</strong></div>
             <div><strong>lu000661@umn.edu</strong></div>
-            <div><strong>Additional emails: TODO</strong></div>
+            <div><strong>{shbhat, joliva}@cs.unc.edu</strong></div>
           </div>
         </div>
       </div>
@@ -361,16 +390,17 @@
       <div class="panel">
         <h2>Abstract</h2>
         <p class="abstract">
-          Automated scientific discovery with large language models is transforming research, yet existing agents
-          struggle to autonomously interpret raw experimental data. We introduce <strong>SciDER</strong>, a data-centric
-          end-to-end system that automates the research lifecycle from ideation to experimentation.
-          Unlike traditional frameworks, the system implements a data-centric workflow by directly parsing and
-          analyzing raw experimental data across diverse domains. This grounding enables hypothesis generation and
-          experimental design tailored to specific data characteristics. SciDER excels in specialized scientific
-          discovery, outperforming general-purpose agents and state-of-the-art models through a self-evolving memory
-          and critic-led feedback loop. Distributed as a modular Python package, SciDER also offers easy-to-use PyPI
-          packages with a lightweight web interface to accelerate autonomous, data-driven research for the broader
-          community.
+          Automated scientific discovery with large language models is transforming the research lifecycle from
+          ideation to experimentation, yet existing agents struggle to autonomously process raw data collected from
+          scientific experiments. We introduce <strong>SciDER</strong>, a data-centric end-to-end system that automates
+          the research lifecycle. Unlike traditional frameworks, our specialized agents collaboratively parse and
+          analyze raw scientific data, generate hypotheses and experimental designs grounded in specific data
+          characteristics, and write and execute corresponding code. Evaluation on three benchmarks shows
+          <strong>SciDER</strong> excels in specialized data-driven scientific discovery and outperforms general-purpose
+          agents and state-of-the-art models through its self-evolving memory and critic-led feedback loop.
+          Distributed as a modular Python package, we also provide easy-to-use PyPI packages with a lightweight web
+          interface to accelerate autonomous, data-driven research and aim to be accessible to all researchers and
+          developers.
         </p>
       </div>
     </section>
@@ -396,26 +426,32 @@
           </div>
         </div>
       </div>
+      <div class="panel" style="margin-top: 20px;">
+        <h2>Agent Comparison</h2>
+        <img class="figure-image" src="ARS-Figure1-2.svg" alt="Comparison figure between general agents and SciDER" />
+      </div>
     </section>
 
     <section id="demo" class="section reveal">
       <div class="demo">
         <div class="mock">
           <h2>Demo Walkthrough</h2>
-          <screen>
-            1. Upload raw experimental data or connect lab storage.
-            2. SciDER parses observations, protocols, and metadata.
-            3. Hypothesis generator proposes next-step experiments.
-            4. Critic validates feasibility and novelty.
-            5. Memory engine distills outcomes for future cycles.
-          </screen>
+          <div class="mock-screen">
+            <ol class="walkthrough-list">
+              <li>Upload raw experimental data or connect lab storage.</li>
+              <li>SciDER parses observations, protocols, and metadata.</li>
+              <li>Hypothesis generator proposes next-step experiments.</li>
+              <li>Critic validates feasibility and novelty.</li>
+              <li>Memory engine distills outcomes for future cycles.</li>
+            </ol>
+          </div>
         </div>
         <div class="panel">
           <h2>Demo Links</h2>
           <div class="list">
-            <div><strong>Live demo:</strong> huggingface.co/spaces/AI4Research/scievo</div>
-            <div><strong>Video:</strong> TODO</div>
-            <div><strong>Project page:</strong> harryluumn.github.io/scievo-project-page</div>
+            <div><strong>Live demo:</strong> huggingface.co/spaces/AI4Research/scider</div>
+            <div><strong>Video:</strong> youtu.be/2SQluhKP6RM</div>
+            <div><strong>Project page:</strong> harryluumn.github.io/scider-proj-page</div>
           </div>
         </div>
       </div>
@@ -426,7 +462,7 @@
         <h2>Resources</h2>
         <div class="grid">
           <div class="panel" style="background: rgba(53, 195, 255, 0.08); border-color: rgba(53, 195, 255, 0.3);">
-            <h2>Paper (ACL Demo 2026)</h2>
+            <h2>Paper</h2>
             <p class="abstract" style="margin-bottom: 0;">
               The submission highlights the data-centric workflow, evaluation across domains, and a lightweight
               tooling stack for research labs.
@@ -445,7 +481,7 @@
 
     <footer class="footer">
       <span>© 2026 SciDER</span>
-      <span>ACL Demo 2026 · Data-centric autonomous discovery</span>
+      <span>Data-centric autonomous discovery</span>
     </footer>
   </div>
 
