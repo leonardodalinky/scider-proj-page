@@ -1,7 +1,5 @@
 # SciDER: Scientific Data-centric End-to-end Researcher
 
-**ACL Demo 2026 Submission**
-
 SciDER is a data-centric end-to-end system for autonomous scientific discovery. It parses raw experimental data, designs hypotheses, and drives self-evolving scientific workflows across domains.
 
 ## Overview
@@ -17,21 +15,25 @@ Unlike traditional frameworks, SciDER implements a **data-centric workflow** by 
 
 | Resource | Link |
 |----------|------|
-| **Project Page** | [harryluumn.github.io/scievo-project-page](https://harryluumn.github.io/scievo-project-page/) |
-| **Live Demo** | [Hugging Face Spaces](https://huggingface.co/spaces/AI4Research/scievo) |
-| **Code** | [GitHub - SciEvo](https://github.com/leonardodalinky/SciEvo) |
+| **Project Page** | [harryluumn.github.io/scider-proj-page](https://harryluumn.github.io/scider-proj-page/) |
+| **Live Demo** | [Hugging Face Spaces](https://huggingface.co/spaces/AI4Research/scider) |
+| **Video** | [YouTube](https://youtu.be/2SQluhKP6RM) |
+| **Code** | [GitHub - SciDER](https://github.com/leonardodalinky/SciDER) |
 
 ## Authors
 
-- **Ke Lin** — William & Mary (Core contributor)
-- **Yilin Lu** — University of Minnesota (Core contributor)
+- **Ke Lin** — William & Mary
+- **Yilin Lu** — University of Minnesota
+- **Shreyas Bhat** — University of North Carolina at Chapel Hill
+- **Xuehang Guo** — William & Mary
+- **Junier Oliva** — University of North Carolina at Chapel Hill
 - **Qingyun Wang** — William & Mary
 
 ## Contact
 
-- klin07@wm.edu
-- qwang16@wm.edu
+- {klin07, xguo15, qwang16}@wm.edu
 - lu000661@umn.edu
+- {shbhat, joliva}@cs.unc.edu
 
 ## This Repository
 
@@ -53,4 +55,4 @@ Then visit `http://localhost:8000`.
 
 ## License
 
-© 2026 SciDER — ACL Demo 2026
+© 2026 SciDER
