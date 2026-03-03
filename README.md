@@ -15,6 +15,7 @@ Unlike traditional frameworks, SciDER implements a **data-centric workflow** by 
 
 | Resource | Link |
 |----------|------|
+| **Paper** | [arXiv:2603.01421](https://arxiv.org/abs/2603.01421) |
 | **Project Page** | [harryluumn.github.io/scider-proj-page](https://harryluumn.github.io/scider-proj-page/) |
 | **Live Demo** | [Hugging Face Spaces](https://huggingface.co/spaces/AI4Research/scider) |
 | **Video** | [YouTube](https://youtu.be/2SQluhKP6RM) |
