@@ -270,6 +270,33 @@
       background: rgba(8, 12, 16, 0.7);
     }
 
+    .demo-figures {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 24px;
+    }
+
+    .demo-figure {
+      margin: 0;
+    }
+
+    .demo-figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(8, 12, 16, 0.7);
+    }
+
+    .demo-figure-caption {
+      margin-top: 10px;
+      font-family: "IBM Plex Serif", serif;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
     .footer {
       margin-top: 56px;
       color: var(--muted);
@@ -459,6 +486,20 @@
             <div><strong>Project page:</strong> harryluumn.github.io/scider-proj-page</div>
           </div>
         </div>
+      </div>
+      <div class="demo-figures reveal">
+        <figure class="demo-figure">
+          <img src="launchWorkflow.gif" alt="SciDER workflow selection panel" />
+          <figcaption class="demo-figure-caption">
+            Web interface of the SciDER Research Assistant showing the workflow selection panel. Users can initiate different research workflows—Ideation, Data Analysis, Experiment, or a Full Workflow—through a set of interactive buttons, enabling the system to support various stages of the scientific research process from idea generation to experimental execution.
+          </figcaption>
+        </figure>
+        <figure class="demo-figure">
+          <img src="CaseStudy.gif" alt="SciDER case study selection" />
+          <figcaption class="demo-figure-caption">
+            Web interface of the SciDER Research Assistant demonstrating the selection of a case study for a full research workflow. In this example, the system loads a Kepler Exoplanet dataset task, where the agent autonomously conducts ideation, feature hypothesis generation, model training, and experimental evaluation to detect exoplanet transit signals from stellar light curves.
+          </figcaption>
+        </figure>
       </div>
     </section>
 
