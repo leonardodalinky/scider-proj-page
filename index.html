@@ -363,30 +363,30 @@
         </div>
         <h1>SciDER: Scientific Data-centric End-to-end Researcher</h1>
         <p class="subtitle">
-          An end-to-end agentic system that parses raw experimental data, designs hypotheses, and drives
-          self-evolving scientific workflows across domains.
+          An autonomous, multimodal system that parses raw experimental data, generates hypotheses via
+          Evolutionary Idea Search, and synthesizes executable code across scientific domains.
         </p>
         <div class="meta">
-          <span>William &amp; Mary · University of Minnesota · University of North Carolina at Chapel Hill</span>
-          <span>Ke Lin · Yilin Lu · Shreyas Bhat · Xuehang Guo · Junier Oliva · Qingyun Wang</span>
+          <span>William &amp; Mary · MBZUAI · University of Minnesota</span>
+          <span>Ke Lin · Owais Aijaz · Yilin Lu · Xuehang Guo · Preslav Nakov</span>
         </div>
         <div class="link-grid">
           <a class="link-card" href="https://arxiv.org/abs/2603.01421" target="_blank" rel="noreferrer">
             <span class="link-icon">📄</span>
             <span>Paper (arXiv)</span>
           </a>
-          <a class="link-card" href="https://harryluumn.github.io/scider-proj-page/" target="_blank" rel="noreferrer">
+          <a class="link-card" href="https://leonardodalinky.github.io/scider-proj-page/" target="_blank" rel="noreferrer">
             <span class="link-icon">🌐</span>
             <span>Project Page</span>
           </a>
-          <a class="link-card" href="https://huggingface.co/spaces/AI4Research/scider" target="_blank" rel="noreferrer">
+          <a class="link-card" href="https://huggingface.co/collections/leonardklin/scider" target="_blank" rel="noreferrer">
             <span class="link-icon">▶</span>
-            <span>Live Demo</span>
+            <span>Huggingface</span>
           </a>
-          <a class="link-card" href="https://youtu.be/2SQluhKP6RM" target="_blank" rel="noreferrer">
+          <!-- <a class="link-card" href="https://youtu.be/2SQluhKP6RM" target="_blank" rel="noreferrer">
             <span class="link-icon">🎥</span>
             <span>Video</span>
-          </a>
+          </a> -->
           <a class="link-card" href="https://github.com/leonardodalinky/SciDER" target="_blank" rel="noreferrer">
             <span class="link-icon">⌁</span>
             <span>Code</span>
@@ -399,19 +399,20 @@
           <h2>Authors</h2>
           <div class="list">
             <div><strong>Ke Lin</strong><span> · William &amp; Mary</span></div>
+            <div><strong>Owais Aijaz</strong><span> · MBZUAI</span></div>
             <div><strong>Yilin Lu</strong><span> · University of Minnesota</span></div>
-            <div><strong>Shreyas Bhat</strong><span> · University of North Carolina at Chapel Hill</span></div>
             <div><strong>Xuehang Guo</strong><span> · William &amp; Mary</span></div>
-            <div><strong>Junier Oliva</strong><span> · University of North Carolina at Chapel Hill</span></div>
-            <div><strong>Qingyun Wang</strong><span> · William &amp; Mary</span></div>
+            <div><strong>Preslav Nakov</strong><span> · MBZUAI</span></div>
           </div>
         </div>
         <div class="panel">
           <h2>Contact</h2>
           <div class="list">
-            <div><strong>{klin07, xguo15, qwang16}@wm.edu</strong></div>
+            <div><strong>leonard.keilin@gmail.com</strong></div>
+            <div><strong>owais.aijaz@mbzuai.ac.ae</strong></div>
+            <div><strong>xguo15@wm.edu</strong></div>
             <div><strong>lu000661@umn.edu</strong></div>
-            <div><strong>{shbhat, joliva}@cs.unc.edu</strong></div>
+            <div><strong>preslav.nakov@mbzuai.ac.ae</strong></div>
           </div>
         </div>
       </div>
@@ -421,17 +422,16 @@
       <div class="panel">
         <h2>Abstract</h2>
         <p class="abstract">
-          Automated scientific discovery with large language models is transforming the research lifecycle from
-          ideation to experimentation, yet existing agents struggle to autonomously process raw data collected from
-          scientific experiments. We introduce <strong>SciDER</strong>, a data-centric end-to-end system that automates
-          the research lifecycle. Unlike traditional frameworks, our specialized agents collaboratively parse and
-          analyze raw scientific data, generate hypotheses and experimental designs grounded in specific data
-          characteristics, and write and execute corresponding code. Evaluation on three benchmarks shows
-          <strong>SciDER</strong> excels in specialized data-driven scientific discovery and outperforms general-purpose
-          agents and state-of-the-art models through its self-evolving memory and critic-led feedback loop.
-          Distributed as a modular Python package, we also provide easy-to-use PyPI packages with a lightweight web
-          interface to accelerate autonomous, data-driven research and aim to be accessible to all researchers and
-          developers.
+          While large language models accelerate scientific discovery, existing agents struggle to autonomously
+          process raw, multimodal, and domain-specific experimental data. We introduce <strong>SciDER</strong>, an
+          autonomous system that automates the research lifecycle. Equipped with a dynamic multimodal skill system,
+          <strong>SciDER</strong> uses specialized agents to generate hypotheses via Evolutionary Idea Search, analyze
+          raw data, and synthesize executable code grounded in data characteristics. These processes are refined
+          iteratively by a critic-led feedback loop. To support open-source research, we release
+          <strong>OpenSciDER-SFT-8K</strong>, a curated trajectory dataset, and the <strong>OpenSciDER-27B</strong>
+          fine-tuned model. Comprehensive evaluations across ideation, multimodal data analysis, and coding benchmarks
+          show that <strong>SciDER</strong> outperforms state-of-the-art agents, bridging the gap between scientific
+          reasoning and experimental synthesis.
         </p>
       </div>
     </section>
@@ -441,25 +441,25 @@
         <div class="panel">
           <h2>System Highlights</h2>
           <div class="list">
-            <div><strong>Data-first pipeline.</strong> Parses raw experimental artifacts and meta-data directly.</div>
-            <div><strong>Self-evolving memory.</strong> Curates discoveries into reusable scientific context.</div>
-            <div><strong>Critic-led feedback.</strong> Iteratively validates hypotheses before execution.</div>
-            <div><strong>Domain versatility.</strong> Built to generalize across scientific disciplines.</div>
+            <div><strong>Multimodal skill system.</strong> Dynamically loads domain-specific skills across disciplines.</div>
+            <div><strong>Evolutionary Idea Search.</strong> Ranks and evolves candidate hypotheses via an LLM judge.</div>
+            <div><strong>Data-centric analysis.</strong> Profiles raw data by structure, quality, semantics, and dependency.</div>
+            <div><strong>Critic-led feedback.</strong> Iteratively refines ideation, analysis, and experiments.</div>
           </div>
         </div>
         <div class="panel">
           <h2>Release Snapshot</h2>
           <div class="list">
-            <div><strong>Open-source codebase</strong> on GitHub with modular components.</div>
-            <div><strong>PyPI packages</strong> for fast installation and reproducible research.</div>
-            <div><strong>Web interface</strong> for interactive experimentation and demos.</div>
-            <div><strong>Deployment-ready</strong> architecture for labs and applied teams.</div>
+            <div><strong>Open-source codebase</strong> on GitHub (LangGraph + litellm, Apache-2.0).</div>
+            <div><strong>OpenSciDER-SFT-8K</strong> dataset of 8,532 curated research trajectories.</div>
+            <div><strong>OpenSciDER-27B</strong> fine-tuned model built on the Qwen3.6-27B backbone.</div>
+            <div><strong>PyPI package</strong> and lightweight web interface for end-to-end runs.</div>
           </div>
         </div>
       </div>
       <div class="panel" style="margin-top: 20px;">
         <h2>Agent Comparison</h2>
-        <img class="figure-image" src="ARS-Figure1-2.svg" alt="Comparison figure between general agents and SciDER" />
+        <img class="figure-image" src="SciDER.webp" alt="Comparison figure between general agents and SciDER" />
       </div>
     </section>
 
@@ -473,7 +473,6 @@
               <li>SciDER parses observations, protocols, and metadata.</li>
               <li>Hypothesis generator proposes next-step experiments.</li>
               <li>Critic validates feasibility and novelty.</li>
-              <li>Memory engine distills outcomes for future cycles.</li>
             </ol>
           </div>
         </div>
@@ -482,8 +481,8 @@
           <div class="list">
             <div><strong>Paper:</strong> arxiv.org/abs/2603.01421</div>
             <div><strong>Live demo:</strong> huggingface.co/spaces/AI4Research/scider</div>
-            <div><strong>Video:</strong> youtu.be/2SQluhKP6RM</div>
-            <div><strong>Project page:</strong> harryluumn.github.io/scider-proj-page</div>
+            <!-- <div><strong>Video:</strong> youtu.be/2SQluhKP6RM</div> -->
+            <div><strong>Project page:</strong> leonardodalinky.github.io/scider-proj-page/</div>
           </div>
         </div>
       </div>
@@ -510,8 +509,8 @@
           <div class="panel" style="background: rgba(53, 195, 255, 0.08); border-color: rgba(53, 195, 255, 0.3);">
             <h2>Paper</h2>
             <p class="abstract" style="margin-bottom: 12px;">
-              Our preprint highlights the data-centric workflow, evaluation across three benchmarks, and a lightweight
-              tooling stack for research labs.
+              Our preprint details the multimodal skill system, Evolutionary Idea Search, and critic-led feedback loop,
+              with evaluations across ideation, data analysis, and coding benchmarks, plus the OpenSciDER dataset and model.
             </p>
             <a class="link-card" href="https://arxiv.org/abs/2603.01421" target="_blank" rel="noreferrer" style="display: inline-flex;">
               <span class="link-icon">📄</span>
@@ -521,8 +520,8 @@
           <div class="panel" style="background: rgba(125, 247, 166, 0.08); border-color: rgba(125, 247, 166, 0.3);">
             <h2>Open Questions</h2>
             <p class="abstract" style="margin-bottom: 0;">
-              We are actively exploring broader domain coverage, interactive experiment planning, and long-horizon
-              memory evaluation. Collaborators are welcome.
+              We are actively addressing error cascading in long-horizon multi-agent workflows and closing the
+              performance gap between OpenSciDER-27B and frontier proprietary models. Collaborators are welcome.
             </p>
           </div>
         </div>
